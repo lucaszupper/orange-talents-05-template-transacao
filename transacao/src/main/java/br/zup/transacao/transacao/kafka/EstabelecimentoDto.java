@@ -1,17 +1,24 @@
 package br.zup.transacao.transacao.kafka;
 
-public class Estabelecimento {
+import br.zup.transacao.transacao.model.Estabelecimento;
+
+public class EstabelecimentoDto {
     private String nome;
     private String cidade;
     private String endereco;
 
-    public Estabelecimento(String nome, String cidade, String endereco) {
+    public Estabelecimento toModel() {
+        return new Estabelecimento(this.nome,this.cidade,this.endereco);
+    }
+
+    public EstabelecimentoDto(String nome, String cidade, String endereco) {
         this.nome = nome;
         this.cidade = cidade;
         this.endereco = endereco;
     }
 
-    public Estabelecimento() {
+
+    public EstabelecimentoDto() {
     }
 
     @Override
